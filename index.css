@@ -1,0 +1,551 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #5f9341 0%, #a8e063 100%);
+  padding: 30px 0 20px 0;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 16px rgba(95, 147, 65, 0.08);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.nav-list li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-list li a:hover {
+  color: #333;
+}
+
+.nav-list li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #a8e063;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-list li a:hover::after,
+.nav-list li a:focus::after {
+  transform: scaleX(1);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(0.5) brightness(0.9);
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.social-links img:hover {
+  filter: none;
+  transform: scale(1.15) rotate(-6deg);
+}
+
+h1 {
+  color: #fff;
+  font-size: 2.7rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Add a hero section for a strong first impression */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #a8e063 0%, #5f9341 100%);
+  color: #fff;
+  padding: 48px 0 32px 0;
+  border-radius: 0 0 24px 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 6px 24px rgba(95, 147, 65, 0.1);
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hero img.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #f4f4f4;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Improve button styles */
+.button {
+  display: inline-block;
+  background: #5f9341;
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 24px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+.button:hover {
+  background: #41732b;
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Add card effect for sections */
+section {
+  background-color: #fff;
+  padding: 24px;
+  margin: 18px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s;
+  border-left: 6px solid #a8e063;
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Add animation for section appearance */
+section {
+  animation: fadeInUp 0.7s ease;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section,
+.hero,
+.project-card,
+.timeline-item,
+.testimonial-card,
+.cta {
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Staggered animation for project cards and timeline items */
+.projects-grid .project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.projects-grid .project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.testimonial-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.testimonial-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+section:hover {
+  box-shadow: 0 4px 24px rgba(95, 147, 65, 0.12);
+}
+
+h2 {
+  color: #5f9341;
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #5f9341 0%, #a8e063 100%);
+  border-radius: 2px;
+  margin-top: 8px;
+  animation: slideIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: #5f9341;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 98%;
+    padding: 8px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  section {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 98%;
+    padding: 8px;
+  }
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .hero {
+    padding: 32px 0 20px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero img.profile-pic {
+    width: 80px;
+    height: 80px;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .skills-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #666;
+  animation: fadeIn 1.2s 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Add modern styles for Skills and Projects sections */
+.skills {
+  margin: 24px 0;
+  text-align: center;
+}
+.skills h2 {
+  text-align: left;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+}
+
+.skill-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #5f9341 0%, #a8e063 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(95, 147, 65, 0.08);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.skill-badge:hover {
+  background: #41732b;
+  color: #fff;
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.projects {
+  margin: 32px 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  margin-top: 18px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 20px 18px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border-left: 5px solid #5f9341;
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.project-card:hover {
+  box-shadow: 0 6px 32px rgba(95, 147, 65, 0.15);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.project-img {
+  width: 100%;
+  max-width: 220px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+}
+
+.project-card h3 {
+  margin: 10px 0 8px 0;
+  color: #5f9341;
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Timeline Section */
+.timeline {
+  margin: 40px 0 32px 0;
+}
+.timeline-container {
+  position: relative;
+  margin: 32px 0 0 0;
+  padding-left: 30px;
+  border-left: 3px solid #a8e063;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 36px;
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.timeline-dot {
+  position: absolute;
+  left: -13px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(90deg, #5f9341 0%, #a8e063 100%);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(95, 147, 65, 0.15);
+  animation: popIn 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes popIn {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.timeline-content {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 16px 20px;
+  margin-left: 18px;
+  position: relative;
+}
+.timeline-date {
+  font-size: 0.95rem;
+  color: #5f9341;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Testimonials Section */
+.testimonials {
+  margin: 40px 0 32px 0;
+  text-align: center;
+}
+.testimonials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 18px;
+}
+.testimonial-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 22px 28px 18px 28px;
+  max-width: 340px;
+  min-width: 220px;
+  font-style: italic;
+  position: relative;
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.testimonial-author {
+  display: block;
+  margin-top: 10px;
+  color: #5f9341;
+  font-weight: bold;
+  font-size: 1rem;
+  font-style: normal;
+}
+
+/* Call-to-Action Section */
+.cta {
+  background: linear-gradient(90deg, #5f9341 0%, #a8e063 100%);
+  color: #fff;
+  border-radius: 16px;
+  text-align: center;
+  padding: 36px 18px 32px 18px;
+  margin: 40px 0 32px 0;
+  box-shadow: 0 4px 24px rgba(95, 147, 65, 0.1);
+  animation: fadeIn 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.cta h2 {
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+.cta p {
+  color: #f4f4f4;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+.cta .button {
+  background: #fff;
+  color: #5f9341;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 2px 8px rgba(95, 147, 65, 0.1);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.cta .button:hover {
+  background: #e6f9d5;
+  color: #41732b;
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .projects-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
